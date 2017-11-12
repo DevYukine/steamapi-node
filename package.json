@@ -1,0 +1,40 @@
+{
+ "name": "steamapi-node",
+ "version": "1.0.0",
+ "description": "a Node.js wrapper for the steam api",
+ "main": "index.js",
+ "scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1"
+ },
+ "repository": {
+  "type": "git",
+  "url": "git+https://github.com/Dev-Yukine/steamapi-node.git"
+ },
+ "keywords": [
+  "steam",
+  "api",
+  "steampowered",
+  "wrapper"
+ ],
+ "author": "Yukine",
+ "license": "Apache-2.0",
+ "bugs": {
+  "url": "https://github.com/Dev-Yukine/steamapi-node/issues"
+ },
+ "eslintConfig": {
+  "extends": "aqua",
+  "rules": {
+   "consistent-return": "off",
+   "max-len": "off",
+   "no-console": "off"
+  }
+ },
+ "homepage": "https://github.com/Dev-Yukine/steamapi-node#readme",
+ "devDependencies": {
+  "eslint": "^4.11.0",
+  "eslint-config-aqua": "^2.0.1"
+ },
+ "dependencies": {
+  "snekfetch": "^3.5.8"
+ }
+}

@@ -25,6 +25,7 @@ module.exports = class OtherEndpoints extends Endpoint {
 
 	/**
 	 * Resolve info based on id|profile|url
+	 * @async
 	 * @param {string} info Something to resolve e.g 'https://steamcommunity.com/id/xDim'
 	 * @returns {Promise<string>} Profile ID
 	 */
@@ -55,11 +56,13 @@ module.exports = class OtherEndpoints extends Endpoint {
 				throw new Error('Invalid profile link/id');
 			}
 		}
+		if (!steamID) throw new Error('Can\'t resolve info to an ID');
 		return steamID;
 	}
 
 	/**
 	 * Get every single app on steam
+	 * @async
 	 * @returns {Promise<Array<Object>>} Objects consisting of appid and name
 	 */
 	async getAppList() {
@@ -69,6 +72,7 @@ module.exports = class OtherEndpoints extends Endpoint {
 
 	/**
 	 * Get featured categories on the steam store
+	 * @async
 	 * @returns {Promise<Object>} Featured categories
 	 */
 	async getFeaturedCategories() {
@@ -77,6 +81,7 @@ module.exports = class OtherEndpoints extends Endpoint {
 	}
 	/**
 	 * Get every server associated with host
+	 * @async
 	 * @param {string} host Host to request
 	 * @returns {Promise<Array<Object>>} Objects consisting of server info
 	 */

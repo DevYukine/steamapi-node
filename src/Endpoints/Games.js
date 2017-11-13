@@ -14,6 +14,7 @@ module.exports = class GameEndpoints extends Endpoint {
 
 	/**
 	 * Get featured games on the steam store
+	 * @async
 	 * @returns {Promise<Object>} Featured games
 	 */
 	async getFeaturedGames() {
@@ -23,6 +24,7 @@ module.exports = class GameEndpoints extends Endpoint {
 
 	/**
 	 * Get achievements for app id
+	 * @async
 	 * @param {string} app App ID
 	 * @returns {Promise<Array<string>>} App achievements for ID
 	 */
@@ -34,6 +36,7 @@ module.exports = class GameEndpoints extends Endpoint {
 
 	/**
 	 * Get details for app id
+	 * @async
 	 * <warn>Requests for this endpoint are limited to 200 every 5 minutes</warn>
 	 * @param {string} app App ID
 	 * @param {boolean} force Overwrite cache
@@ -61,6 +64,7 @@ module.exports = class GameEndpoints extends Endpoint {
 
 	/**
 	 * Get news for app id
+	 * @async
 	 * @param {number} app App ID
 	 * @returns {Promise<Array<Object>>} App news for ID
 	 */
@@ -73,6 +77,7 @@ module.exports = class GameEndpoints extends Endpoint {
 
 	/**
 	 * Get number of current players for app id
+	 * @async
 	 * @param {number} app App ID
 	 * @returns {Promise<number>} Number of players
 	 */
@@ -85,6 +90,7 @@ module.exports = class GameEndpoints extends Endpoint {
 
 	/**
 	 * Get schema for app id
+	 * @async
 	 * @param {number} app App ID
 	 * @returns {Promise<number>} Schema
 	 */

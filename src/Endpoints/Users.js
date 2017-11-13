@@ -15,6 +15,7 @@ module.exports = class UserEndpoints extends Endpoint {
 
 	/**
 	 * Get users achievements for app id
+	 * @async
 	 * @param {string} id User ID
 	 * @param {string} app App ID
 	 * @returns {Promise<Object>} Achievements
@@ -38,6 +39,7 @@ module.exports = class UserEndpoints extends Endpoint {
 
 	/**
 	 * Get users badges
+	 * @async
 	 * @param {string} id User ID
 	 * @returns {Promise<Array<Object>>} Badges
 	 */
@@ -58,6 +60,7 @@ module.exports = class UserEndpoints extends Endpoint {
 
 	/**
 	 * Get users bans
+	 * @async
 	 * @param {string} id User ID
 	 * @returns {Promise<Object>} Ban info
 	 */
@@ -78,6 +81,7 @@ module.exports = class UserEndpoints extends Endpoint {
 
 	/**
 	 * Get users friends
+	 * @async
 	 * @param {string} id User ID
 	 * @returns {Promise<Array<Object>>} Friends
 	 */
@@ -93,6 +97,7 @@ module.exports = class UserEndpoints extends Endpoint {
 
 	/**
 	 * Get users groups
+	 * @async
 	 * @param {string} id User ID
 	 * @returns {Promise<Array<string>>} Groups
 	 */
@@ -105,6 +110,7 @@ module.exports = class UserEndpoints extends Endpoint {
 
 	/**
 	 * Get users level
+	 * @async
 	 * @param {string} id User ID
 	 * @returns {Promise<number>} Level
 	 */
@@ -116,6 +122,7 @@ module.exports = class UserEndpoints extends Endpoint {
 
 	/**
 	 * Get users owned games
+	 * @async
 	 * @param {string} id User ID
 	 * @returns {Promise<Array<Object>>} Owned games
 	 */
@@ -131,6 +138,7 @@ module.exports = class UserEndpoints extends Endpoint {
 
 	/**
 	 * Get users recent games
+	 * @async
 	 * @param {string} id User ID
 	 * @returns {Promise<Array<Object>>} Recent games
 	 */
@@ -149,6 +157,7 @@ module.exports = class UserEndpoints extends Endpoint {
 
 	/**
 	 * Gets servers on steamcommunity.com/dev/managegameservers using your key or provided key
+	 * @async
 	 * @param {string} [key=this.key] Key
 	 * @returns {Promise<Object>} Servers
 	 */
@@ -161,6 +170,7 @@ module.exports = class UserEndpoints extends Endpoint {
 
 	/**
 	 * Get users stats for app id
+	 * @async
 	 * @param {string} id User ID
 	 * @param {string} app App ID
 	 * @returns {Promise<Object>} Stats for app id
@@ -175,6 +185,7 @@ module.exports = class UserEndpoints extends Endpoint {
 
 	/**
 	 * Get users summary
+	 * @async
 	 * @param {string} id User ID
 	 * @returns {Promise<Object>} Summary
 	 */

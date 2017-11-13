@@ -1,11 +1,12 @@
 const Games = require('./Endpoints/Games.js');
 const Users = require('./Endpoints/Users.js');
 const Others = require('./Endpoints/Others.js');
-const Endpoint = require('./Endpoints/Endpoint.js');
+const EndpointClass = require('./Endpoints/Endpoint.js');
 
 module.exports = class SteamUser {
 	/**
 	 * Create a SteamUser Class to interact with the SteamApi
+	 * @class
 	 * @param {string} key Steam key
 	 * @param {Object} [cache={}] Optional options for caching `getGameDetails()`
 	 * @param {boolean} [cache.enabled=true] Whether to cache or not
@@ -18,9 +19,9 @@ module.exports = class SteamUser {
 			enabled: cache.enabled !== false,
 			expires: cache.expires || 86400000
 		};
-		if (endpoints.some(endpoint => !(endpoint.prototype instanceof Endpoint))) throw Error('The endpoint array only accept Endpoint Classes.');
-		for (let i = 0; i < endpoints.length; i++) {
-			const instance = new endpoints[i](key, this.options);
+		if (endpoints.some(endpoint => !(endpoint.prototype instanceof EndpointClass))) throw Error('The endpoint array only accept Classes that extend the Endpoint Class.');
+		for (const Endpoint of endpoints) {
+			const instance = new Endpoint(key, this.options);
 			this[instance.group] = instance;
 		}
 	}

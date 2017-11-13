@@ -3,7 +3,7 @@ const steam = new SteamUser(process.env.key); // eslint-disable-line no-process-
 
 const inspect = json => console.log(require('util').inspect(json, { depth: null }));
 
-steam.others.resolve('id/DimGG/').then(async id => {
+steam.others.resolve('/profiles/76561198334532819/').then(async id => {
 	console.log('resolve');
 	console.log(id);
 

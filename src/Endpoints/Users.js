@@ -149,29 +149,14 @@ module.exports = class UserEndpoints extends Endpoint {
 
 	/**
 	 * Gets servers on steamcommunity.com/dev/managegameservers using your key or provided key
-	 * @param {boolean} [hide=false] Hide deleted/expired servers
 	 * @param {string} [key=this.key] Key
 	 * @returns {Promise<Object>} Servers
 	 */
-	async getUserServers(hide = false, key = this.key) {
+	async getUserServers(key = this.key) {
 		const { body } = await get(`${this.baseURL}/IGameServersService/GetAccountList/v1?key=${key}`, this.headers);
 		console.log(require('util').inspect(body));
 		const { response } = body;
-		return {
-			actor: response.actor,
-			expires: response.expires,
-			banned: response.is_banned,
-			lastActionTime: response.last_action_time,
-			servers: response.servers.filter(server => hide && !(server.is_deleted || server.is_expired)).map(server => ({
-				appID: server.appid,
-				deleted: server.is_deleted,
-				expired: server.is_expired,
-				lastLoginTime: server.rt_last_logon,
-				memo: server.memo,
-				steamID: server.steamid,
-				token: server.login_token
-			}))
-		};
+		return response;
 	}
 
 	/**

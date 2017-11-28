@@ -1,4 +1,4 @@
-declare module 'SteamApi'{
+declare module 'steamapi-node'{
 
 	export class SteamUser {
 		constructor(key: String, cacheOptions: {

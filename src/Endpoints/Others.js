@@ -10,10 +10,6 @@ module.exports = class OtherEndpoints extends Endpoint {
 	 * @extends {Endpoint}
 	 */
 
-	constructor(key, options) {
-		super(key, 'others', options);
-	}
-
 	/**
 	 * Get custom path that isn't in SteamAPI
 	 * @param {string} path Path to request e.g '/IPlayerService/GetOwnedGames/v1?steamid=76561198378422474'

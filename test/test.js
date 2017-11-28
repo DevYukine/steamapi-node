@@ -1,4 +1,4 @@
-const { SteamUser } = require('..');
+const SteamUser = require('..');
 const steam = new SteamUser(process.env.key); // eslint-disable-line no-process-env
 
 const inspect = json => console.log(require('util').inspect(json, { depth: null }));

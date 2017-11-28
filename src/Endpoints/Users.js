@@ -9,7 +9,7 @@ module.exports = class UserEndpoints extends Endpoint {
 	 * @extends {Endpoint}
 	 */
 	constructor(key, options) {
-		super(key, 'users', options);
+		super(key, options);
 		this.idReg = /^\d{17}$/;
 	}
 
@@ -156,13 +156,12 @@ module.exports = class UserEndpoints extends Endpoint {
 	}
 
 	/**
-	 * Gets servers on steamcommunity.com/dev/managegameservers using your key or provided key
+	 * Gets servers on steamcommunity.com/dev/managegameservers using your key
 	 * @async
-	 * @param {string} [key=this.key] Key
 	 * @returns {Promise<Object>} Servers
 	 */
-	async getUserServers(key = this.key) {
-		const { body } = await get(`${this.baseURL}/IGameServersService/GetAccountList/v1?key=${key}`, this.headers);
+	async getUserServers() {
+		const { body } = await get(`${this.baseURL}/IGameServersService/GetAccountList/v1?key=${this.key}`, this.headers);
 		console.log(require('util').inspect(body));
 		const { response } = body;
 		return response;

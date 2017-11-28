@@ -1,19 +1,19 @@
 # steamapi-node
-a Node.js wrapper for the Steam Api.
+A wrapper for the Steam Api written in javascript.
 
 ## Information
-this is a fork of [node-steamapi](https://github.com/lloti/node-steamapi) where i only refactored the code to be more Object Oriented aswell as fixed little stuff with JSDocs as example and used snekfetch for the http requests
+This is a fork of [node-steamapi](https://github.com/lloti/node-steamapi) where i only refactored the code to be more Object Oriented aswell as fixed little stuff with JSDocs as example and used snekfetch for the http requests.
 
-also it is fully documented with JsDocs
+also it is fully documented with JsDocs and has typings included.
 
 ## Usage
 
-to use above mentioned Classes you just need to call the class name on the SteamUser instance and then the method name like shown below
+You just require the module and create a new Class instance of the exported class. You need to provide atleast an key but it also has caching options to cache requests for getGameNews because this enpoint has an rate-limit of 200 every 5 minutes. aswell as you can provide an array of names from these endpoint groups you dont need to save memory.
 
 Examples:
 
 ```js
-const { SteamUser } = require('steamapi-node');
+const SteamUser = require('steamapi-node');
 const steam = new SteamUser("YOUR STEAM API KEY HERE");
 
 steam.others.resolve('/profiles/76561198334532819/').then(id => {
@@ -27,7 +27,7 @@ steam.others.resolve('/profiles/76561198334532819/').then(id => {
 or with async/await
 
 ```js
-const { SteamUser } = require('steamapi-node');
+const SteamUser = require('steamapi-node');
 const steam = new SteamUser("YOUR STEAM API KEY HERE");
 
 const getFriends = async input => {
@@ -43,8 +43,8 @@ getFriends('/profiles/76561198334532819/').then(result => {
 if you only need specific endpoint groups as example you can do this
 
 ```js
-const { SteamUser, Others } = require('steamapi-node');
-const steam = new SteamUser("YOUR STEAM API KEY HERE", {}, [Others]);
+const SteamUser = require('steamapi-node');
+const steam = new SteamUser("YOUR STEAM API KEY HERE", {}, ['games', 'users']);
 
 steam.others.resolve('/profiles/76561198334532819/').then(result => {
     // handle returned data

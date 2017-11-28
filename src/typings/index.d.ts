@@ -1,10 +1,7 @@
 declare module 'steamapi-node'{
 
 	export class SteamUser {
-		constructor(key: String, cacheOptions: {
-			enabled: boolean,
-			expires: number
-		}, endpoints: Array<Endpoint>)
+		constructor(key: String, cacheOptions: cacheOptions, endpoints: Array<Endpoint>)
 
 		public options: {
 			enabled: Boolean,
@@ -17,10 +14,7 @@ declare module 'steamapi-node'{
 	}
 
 	export class GameEndpoints extends Endpoint {
-		constructor(key: String, options: {
-			enabled: Boolean,
-			expires: Number   
-		})
+		constructor(key: String, options: cacheOptions)
 
 		public getFeaturedGames(): Promise<Object>
 
@@ -36,10 +30,7 @@ declare module 'steamapi-node'{
 	}
 
 	export class UserEndpoints extends Endpoint {
-		constructor(key: String, options: {
-			enabled: Boolean,
-			expires: Number   
-		})
+		constructor(key: String, options: cacheOptions)
 
 		public idReg: RegExp
 
@@ -67,10 +58,7 @@ declare module 'steamapi-node'{
 	}
 
 	export class OtherEndpoints extends Endpoint {
-		constructor(key: String, options: {
-			enabled: Boolean,
-			expires: Number   
-		})
+		constructor(key: String, options: cacheOptions)
 
 		public get(path: String): Promise<Object>
 
@@ -84,27 +72,24 @@ declare module 'steamapi-node'{
 	}
 
 	class Endpoint {
-		constructor(key: String, group: String, options: {
-			enabled: Boolean,
-			expires: Number   
-		})
+		constructor(key: String, options: cacheOptions)
 
 		public baseURL: String
 		public key: String
 		public headers: {
 			'User-Agent': String
 		}
-		public group: String
-		public options: {
-			enabled: Boolean,
-			expires: Number  
-		}
-		public cache?: Map<String, {
-			date: Object
-			expires: number
-		}>
-
-
+		public options: cacheOptions
+		public cache?: Map<String, cache>
 	}
 
+	type cache = {
+		date: Object
+		expires: number
+	}
+
+	type cacheOptions = {
+		enabled: Boolean,
+		expires: Number 
+	}
 }

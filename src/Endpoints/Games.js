@@ -8,9 +8,6 @@ module.exports = class GameEndpoints extends Endpoint {
 	 * @param {Object} options the caching options of the SteamUser
 	 * @extends {Endpoint}
 	 */
-	constructor(key, options) {
-		super(key, 'games', options);
-	}
 
 	/**
 	 * Get featured games on the steam store

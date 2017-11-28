@@ -1,6 +1,6 @@
 {
  "name": "steamapi-node",
- "version": "1.0.3",
+ "version": "2.0.0",
  "description": "a Node.js wrapper for the steam api",
  "main": "index.js",
  "scripts": {
@@ -31,7 +31,7 @@
  },
  "homepage": "https://github.com/Dev-Yukine/steamapi-node#readme",
  "devDependencies": {
-  "eslint": "^4.11.0",
+  "eslint": "^4.12.0",
   "eslint-config-aqua": "^2.0.1"
  },
  "dependencies": {

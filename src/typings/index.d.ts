@@ -4,7 +4,7 @@ declare module 'steamapi-node'{
 		constructor(key: String, cacheOptions: {
 			enabled: boolean,
 			expires: number
-		}, endpoints: [GameEndpoints, UserEndpoints, OtherEndpoints])
+		}, endpoints: Array<Endpoint>)
 
 		public options: {
 			enabled: Boolean,

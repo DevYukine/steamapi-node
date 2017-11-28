@@ -2,7 +2,7 @@
  "name": "steamapi-node",
  "version": "2.0.2",
  "description": "a Node.js wrapper for the steam api",
- "main": "index.js",
+ "main": "./src/SteamUser.js",
  "scripts": {
   "test": "echo \"Error: no test specified\" && exit 1"
  },

@@ -4,10 +4,9 @@ declare module 'steamapi-node'{
 		constructor(key: string, cacheOptions: cacheOptions, disabledEndpoints: Array<string>)
 
 		public options: cacheOptions
-		
-		public others: OtherEndpoints
-		public games: GameEndpoints
-		public users: UserEndpoints
+		public others?: OtherEndpoints
+		public games?: GameEndpoints
+		public users?: UserEndpoints
 	}
 
 	class GameEndpoints extends Endpoint {

@@ -24,7 +24,7 @@ module.exports = class SteamUser {
 		this.others = new Others(key, cacheOptions);
 		this.users = new Users(key, cacheOptions);
 		this.games = new Games(key, cacheOptions);
-		if (disabledEndpoints.length > 1) {
+		if (disabledEndpoints.length > 0) {
 			for (const endpoint of disabledEndpoints) {
 				delete this[endpoint];
 			}
